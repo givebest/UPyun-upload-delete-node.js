@@ -4,7 +4,7 @@ const app = express();
 const crypto = require("crypto");
 const axios = require('axios');
 const cookieParser=require("cookie-parser");
-const account = require('./config/account');
+const account = require('./config/account');  // UPyun 帐号信息，可删除在下面直接赋值
 
 app.use(cookieParser());
 
@@ -12,7 +12,7 @@ const date = new Date().toGMTString();
 const bucketname = account.UPyun.bucketname;  // 空间名
 const key = account.UPyun.key; // 操作员
 const secret = account.UPyun.secret; // 密码
-const ypyunUrl = 'http://v0.api.upyun.com/'
+const upyunUrl = 'http://v0.api.upyun.com/'
 const corsDomain = 'devops.wsp'
 
 // CORS @see https://github.com/expressjs/cors
@@ -69,7 +69,7 @@ app.get('/api/token/del', (req, res) => {
 
 
   axios({
-    url: ypyunUrl + bucketname + item,
+    url: upyunUrl + bucketname + item,
     method: 'DELETE',
     headers: {
       // 'Authorization': 'UPYUN devops:waBzsa4pkvoEKl0UHdwMEnOnmHg=',

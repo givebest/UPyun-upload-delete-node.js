@@ -34,7 +34,7 @@
   <script src="https://unpkg.com/vue@2.5.17/dist/vue.js"></script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script>
-    const ypUrl = 'http://v0.api.upyun.com/new-devops'
+    const upUrl = 'http://v0.api.upyun.com/new-devops'
     const baseApi = 'http://localhost:8082/api/'
     let uploadInput;
 
@@ -53,7 +53,7 @@
 
             axios({
               method: 'POST',
-              url: ypUrl,
+              url: upUrl,
               data: formData
             }).then(res => {
               res = res || {}
